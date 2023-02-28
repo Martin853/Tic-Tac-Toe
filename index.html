@@ -14,7 +14,35 @@
     </nav>
     <!-- Main Section -->
     <main>
-      <div id="left-side"></div>
+      <div id="left-side">
+        <div id="one-player-section">
+          <h1 class="player-section-header text-center">1 Player</h1>
+          <div id="one-player-middle-section">
+            <h2 class="text-center">Select Difficulty</h2>
+            <h2 class="text-center">Select X or O</h2>
+            <div id="difficulty">
+              <select>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Impossible</option>
+              </select>
+            </div>
+
+            <div id="choose-item-section">
+              <select>
+                <option>X</option>
+                <option>O</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" class="btn">Start / Restart</button>
+        </div>
+        <div id="two-players-section">
+          <h1 class="player-section-header text-center">2 Player</h1>
+          <button type="button" class="btn">Start / Restart</button>
+        </div>
+      </div>
       <div id="game-grid"></div>
     </main>
   </body>
