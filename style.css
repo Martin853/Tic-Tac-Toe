@@ -150,7 +150,7 @@ select > option {
   margin: 1rem 0 1rem 0;
 }
 
-#game-grid {
+#game-grid-section {
   flex: 6;
   background-color: #eee;
 }
