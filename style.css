@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.player-section-header {
+  margin: 1rem 0 1rem 0;
+}
+
 .btn {
   padding: 0.8rem;
   border: none;
@@ -146,11 +150,36 @@ select > option {
   align-items: center;
 }
 
-.player-section-header {
-  margin: 1rem 0 1rem 0;
-}
+/* Game Grid Section*/
 
 #game-grid-section {
   flex: 6;
   background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-grid {
+  width: 450px;
+  height: 450px;
+  border: #333232 solid 3px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-cell {
+  border: #333232 1px solid;
+}
+
+.grid-cell:hover {
+  background-color: #e3e2e2;
+  cursor: pointer;
+}
+
+.game-grid-section-header {
+  margin: 0;
+  font-size: 24px;
 }
