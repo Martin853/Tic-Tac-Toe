@@ -102,6 +102,7 @@ main {
 }
 
 select {
+  width: 8rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
   border: #54577c solid 1px;
