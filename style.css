@@ -113,6 +113,11 @@ select {
   color: white;
 }
 
+select:hover {
+  background-color: #666ba1;
+  cursor: pointer;
+}
+
 select:focus {
   outline: none;
 }
