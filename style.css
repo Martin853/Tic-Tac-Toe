@@ -172,6 +172,10 @@ select > option {
 
 .grid-cell {
   border: #333232 1px solid;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-cell:hover {
