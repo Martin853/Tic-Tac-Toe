@@ -61,96 +61,11 @@ main {
   width: 100%;
   height: 100%;
   display: flex;
-}
-
-/* Left Side */
-
-#left-side {
-  flex: 3;
-  background-color: #eee;
-  border-right: #333232 solid 2px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* One player Section */
-
-#one-player-section {
-  flex: 1;
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: #333232 solid 2px;
+  gap: 2rem;
 }
-
-#one-player-middle-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 1rem;
-}
-
-#difficulty {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#difficulty > h2 {
-  margin-top: 0;
-}
-
-select {
-  width: 8rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  border: #54577c solid 1px;
-  border-radius: 10px;
-  background-color: #8f95d3;
-  font-weight: bold;
-  font-size: 16px;
-  color: white;
-}
-
-select:hover {
-  background-color: #666ba1;
-  cursor: pointer;
-}
-
-select:focus {
-  outline: none;
-}
-
-select > option {
-  background-color: #9ea4e4;
-}
-
-#choose-item-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Two Players Section*/
-
-#two-players-section {
-  flex: 1;
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Game Grid Section*/
 
 #game-grid-section {
   flex: 6;
