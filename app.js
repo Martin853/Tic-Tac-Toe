@@ -1,5 +1,6 @@
-// Gameboard Array
+// Global Variables
 
+let gameState = "playerOne";
 let gameBoard = ["", "", "", "", "", "", "", "", ""];
 
 // Add Create Cells
@@ -22,4 +23,28 @@ function addCellsToScren() {
   });
 }
 
+// Populate The Screen
+
 addCellsToScren();
+
+// Start Game Function
+
+function startGame() {
+  const oldCells = document.querySelectorAll(".grid-cell");
+
+  // Removes the old cells
+  oldCells.forEach((element) => {
+    element.remove();
+  });
+
+  addCellsToScren(); // Repopulates the screen with new cells
+  gameState = "playerOne"; // Changes the game state
+}
+
+// Start/Restart Button Functionality
+
+const startButton = document.querySelector("#start");
+
+startButton.addEventListener("click", function () {
+  startGame();
+});
