@@ -2,15 +2,16 @@
 
 let gameState = "playerOne";
 let gameBoard = ["", "", "", "", "", "", "", "", ""];
+let gameStatus = document.getElementById("game-status");
 
 // Add Create Cells
 
-const gameGrid = document.querySelector("#game-grid");
+const gameGrid = document.getElementById("game-grid");
 
 function createCell(value) {
   const div = document.createElement("div");
   div.classList = "grid-cell";
-  div.innerHTML = value;
+  div.innerText = value;
 
   gameGrid.append(div);
 }
@@ -22,10 +23,6 @@ function addCellsToScren() {
     createCell(element);
   });
 }
-
-// Populate The Screen
-
-addCellsToScren();
 
 // Start Game Function
 
@@ -39,12 +36,43 @@ function startGame() {
 
   addCellsToScren(); // Repopulates the screen with new cells
   gameState = "playerOne"; // Changes the game state
+  gameStatus.innerText = "Player One Turn"; // Changes game status bar
+  gridCellClickedFunctionality(); // Cell Clicked Functionality
 }
 
 // Start/Restart Button Functionality
 
-const startButton = document.querySelector("#start");
+const startButton = document.getElementById("start");
 
 startButton.addEventListener("click", function () {
   startGame();
 });
+
+// Grid Cell Clicked
+
+function gridCellClickedFunctionality() {
+  const gridCells = document.querySelectorAll(".grid-cell"); // Create The Grid Cells
+
+  gridCells.forEach((element) => {
+    element.addEventListener("click", function () {
+      if (gameState === "playerOne") {
+        if (element.innerText === "") {
+          element.innerText = "X";
+          gameStatus.innerText = "Player Two Turn";
+          gameState = "playerTwo";
+        }
+      } else if (gameState === "playerTwo") {
+        if (element.innerText === "") {
+          element.innerText = "O";
+          gameStatus.innerText = "Player One Turn";
+          gameState = "playerOne";
+        }
+      }
+    });
+  });
+}
+
+// Initial Functions Calls
+
+addCellsToScren();
+gridCellClickedFunctionality();
