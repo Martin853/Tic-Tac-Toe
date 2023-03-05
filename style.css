@@ -38,6 +38,9 @@ body {
   padding: 0;
   min-height: 100vh;
   font-family: "Golos Text", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Nav */
@@ -144,6 +147,10 @@ footer {
 
   .grid-cell {
     font-size: 2rem;
+  }
+
+  #game-status {
+    font-size: 22px;
   }
 
   footer {

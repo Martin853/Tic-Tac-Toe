@@ -60,6 +60,7 @@ function gridCellClickedFunctionality() {
           element.innerText = "X";
           gameStatus.innerText = "Player Two Turn";
           gameState = "playerTwo";
+          checkDraw();
           checkWin("X");
         }
       } else if (gameState === "playerTwo") {
@@ -67,6 +68,7 @@ function gridCellClickedFunctionality() {
           element.innerText = "O";
           gameStatus.innerText = "Player One Turn";
           gameState = "playerOne";
+          checkDraw();
           checkWin("O");
         }
       }
@@ -197,6 +199,27 @@ function checkWin(value) {
     } else if (value === "O") {
       gameStatus.innerText = "Player Two Won";
     }
+  }
+}
+
+// Check Draw
+
+function checkDraw() {
+  const gameCells = document.querySelector("#game-grid").childNodes;
+
+  if (
+    gameCells[0].innerText !== "" &&
+    gameCells[1].innerText !== "" &&
+    gameCells[2].innerText !== "" &&
+    gameCells[3].innerText !== "" &&
+    gameCells[4].innerText !== "" &&
+    gameCells[5].innerText !== "" &&
+    gameCells[6].innerText !== "" &&
+    gameCells[7].innerText !== "" &&
+    gameCells[8].innerText !== ""
+  ) {
+    gameState = "";
+    gameStatus.innerHTML = "Game ended in a draw";
   }
 }
 
