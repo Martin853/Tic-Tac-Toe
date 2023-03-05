@@ -60,16 +60,144 @@ function gridCellClickedFunctionality() {
           element.innerText = "X";
           gameStatus.innerText = "Player Two Turn";
           gameState = "playerTwo";
+          checkWin("X");
         }
       } else if (gameState === "playerTwo") {
         if (element.innerText === "") {
           element.innerText = "O";
           gameStatus.innerText = "Player One Turn";
           gameState = "playerOne";
+          checkWin("O");
         }
       }
     });
   });
+}
+
+// Check Win
+
+function checkWin(value) {
+  const gameCells = document.querySelector("#game-grid").childNodes;
+
+  // Pattern 1
+
+  if (
+    gameCells[0].innerText === value &&
+    gameCells[1].innerText === value &&
+    gameCells[2].innerText === value
+  ) {
+    gameState = "";
+    if (value === "X") {
+      gameStatus.innerText = "Player One Won";
+    } else if (value === "O") {
+      gameStatus.innerText = "Player Two Won";
+    }
+  }
+
+  // Pattern 2
+
+  if (
+    gameCells[3].innerText === value &&
+    gameCells[4].innerText === value &&
+    gameCells[5].innerText === value
+  ) {
+    gameState = "";
+    if (value === "X") {
+      gameStatus.innerText = "Player One Won";
+    } else if (value === "O") {
+      gameStatus.innerText = "Player Two Won";
+    }
+  }
+
+  // Pattern 3
+
+  if (
+    gameCells[6].innerText === value &&
+    gameCells[7].innerText === value &&
+    gameCells[8].innerText === value
+  ) {
+    gameState = "";
+    if (value === "X") {
+      gameStatus.innerText = "Player One Won";
+    } else if (value === "O") {
+      gameStatus.innerText = "Player Two Won";
+    }
+  }
+
+  // Pattern 4
+
+  if (
+    gameCells[0].innerText === value &&
+    gameCells[3].innerText === value &&
+    gameCells[6].innerText === value
+  ) {
+    gameState = "";
+    if (value === "X") {
+      gameStatus.innerText = "Player One Won";
+    } else if (value === "O") {
+      gameStatus.innerText = "Player Two Won";
+    }
+  }
+
+  // Pattern 5
+
+  if (
+    gameCells[1].innerText === value &&
+    gameCells[4].innerText === value &&
+    gameCells[7].innerText === value
+  ) {
+    gameState = "";
+    if (value === "X") {
+      gameStatus.innerText = "Player One Won";
+    } else if (value === "O") {
+      gameStatus.innerText = "Player Two Won";
+    }
+  }
+
+  // Pattern 6
+
+  if (
+    gameCells[2].innerText === value &&
+    gameCells[5].innerText === value &&
+    gameCells[8].innerText === value
+  ) {
+    gameState = "";
+    if (value === "X") {
+      gameStatus.innerText = "Player One Won";
+    } else if (value === "O") {
+      gameStatus.innerText = "Player Two Won";
+    }
+  }
+
+  // Pattern 7
+
+  if (
+    gameCells[0].innerText === value &&
+    gameCells[4].innerText === value &&
+    gameCells[8].innerText === value
+  ) {
+    gameState = "";
+    if (value === "X") {
+      gameStatus.innerText = "Player One Won";
+    } else if (value === "O") {
+      gameStatus.innerText = "Player Two Won";
+    }
+  }
+
+  // Pattern 8
+
+  if (
+    gameCells[2].innerText === value &&
+    gameCells[4].innerText === value &&
+    gameCells[6].innerText === value
+  ) {
+    gameState = "";
+    if (value === "X") {
+      gameStatus.innerText = "Player One Won";
+    } else if (value === "O") {
+      gameStatus.innerText = "Player Two Won";
+    }
+  }
 }
 
 // Initial Functions Calls
