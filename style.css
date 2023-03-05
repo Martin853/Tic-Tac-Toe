@@ -36,7 +36,7 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Golos Text", sans-serif;
 }
 
@@ -67,6 +67,8 @@ main {
   align-items: center;
   gap: 1rem;
 }
+
+/* Game Grid */
 
 #game-grid-section {
   flex: 6;
@@ -102,4 +104,49 @@ main {
 .game-grid-section-header {
   margin: 0;
   font-size: 24px;
+}
+
+/* Game Status Bar*/
+
+#game-status {
+  text-align: center;
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 2rem 0 2rem 0;
+  background-color: #333232;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+@media all and (max-width: 550px) {
+  #game-grid {
+    width: 300px;
+    height: 300px;
+  }
+
+  .grid-cell {
+    font-size: 3rem;
+  }
+}
+
+@media all and (max-width: 350px) {
+  #game-grid {
+    width: 200px;
+    height: 200px;
+  }
+
+  .grid-cell {
+    font-size: 2rem;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
 }
