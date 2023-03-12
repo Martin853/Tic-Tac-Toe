@@ -3,49 +3,56 @@
 let gameState = "playerOne";
 let gameBoard = ["", "", "", "", "", "", "", "", ""];
 let gameStatus = document.getElementById("game-status");
-
-// Add Create Cells
-
 const gameGrid = document.getElementById("game-grid");
 
-function createCell(value) {
-  const div = document.createElement("div");
-  div.classList = "grid-cell";
-  div.innerText = value;
+// Game Factory Function
 
-  gameGrid.append(div);
+function game() {
+  // Add Create Cells
+
+  const createCell = function (value) {
+    const div = document.createElement("div");
+    div.classList = "grid-cell";
+    div.innerText = value;
+
+    gameGrid.append(div);
+  };
+
+  // Add Cells To Screen
+
+  const addCellsToScreen = function () {
+    gameBoard.forEach((element) => {
+      gameFunctionality.createCell(element);
+    });
+  };
+
+  // Start Game Function
+
+  const startGame = function () {
+    const oldCells = document.querySelectorAll(".grid-cell");
+
+    // Removes the old cells
+    oldCells.forEach((element) => {
+      element.remove();
+    });
+
+    game.addCellsToScreen(); // Repopulates the screen with new cells
+    gameState = "playerOne"; // Changes the game state
+    gameStatus.innerText = "Player One Turn"; // Changes game status bar
+    gridCellClickedFunctionality(); // Cell Clicked Functionality
+  };
+
+  return { createCell, addCellsToScreen, startGame };
 }
 
-// Add Cells To Screen
-
-function addCellsToScren() {
-  gameBoard.forEach((element) => {
-    createCell(element);
-  });
-}
-
-// Start Game Function
-
-function startGame() {
-  const oldCells = document.querySelectorAll(".grid-cell");
-
-  // Removes the old cells
-  oldCells.forEach((element) => {
-    element.remove();
-  });
-
-  addCellsToScren(); // Repopulates the screen with new cells
-  gameState = "playerOne"; // Changes the game state
-  gameStatus.innerText = "Player One Turn"; // Changes game status bar
-  gridCellClickedFunctionality(); // Cell Clicked Functionality
-}
+const gameFunctionality = game();
 
 // Start/Restart Button Functionality
 
 const startButton = document.getElementById("start");
 
 startButton.addEventListener("click", function () {
-  startGame();
+  game.gameFunctionalitystartGame();
 });
 
 // Grid Cell Clicked
@@ -225,5 +232,5 @@ function checkDraw() {
 
 // Initial Functions Calls
 
-addCellsToScren();
+gameFunctionality.addCellsToScreen();
 gridCellClickedFunctionality();
